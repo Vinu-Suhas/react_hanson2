@@ -1,4 +1,5 @@
 import React from "react"
+import './styles.css'
 
 class FormCompo extends  React.Component{
 
@@ -59,6 +60,7 @@ class FormCompo extends  React.Component{
 
         return(
             <>
+            <div className="formContainer">
             <form>
                 <label >Name:
                     <input type="text"  id="name" name="name" onChange={this.handleChange}></input>
@@ -69,10 +71,11 @@ class FormCompo extends  React.Component{
                 <br></br>
                 <label >Rating:
                     <input type="number"  id="rating" name="rating" onChange={this.handleChange}></input>
-                </label>
+                </label><br></br>
                 {/* <h1>{this.state.name}</h1> */}
                 <button onClick={this.handleSubmit} type="button">Submit</button>
             </form>
+            </div>
 
             <div>
                 <h2>Results:</h2>
