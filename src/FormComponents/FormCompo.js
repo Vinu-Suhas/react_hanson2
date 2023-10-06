@@ -7,7 +7,14 @@ class FormCompo extends  React.Component{
         super()
         this.state={
             StuData:[],
-            error:{}
+            error:{},
+            newData:[
+                {name:'Ramesh',batch :'EA23'},
+                {name:'Ramte',batch :'EA21'},
+                {name:'Suresh',batch :'EA23'},
+                {name:'Saketh',batch :'EA13'},
+                {name:'Vishal',batch :'EA18'},
+            ]
         }
 
         // this.setState({StuData:this.StuData})
@@ -46,7 +53,7 @@ class FormCompo extends  React.Component{
         if(this.validate()){
             const tempobj={
                 name:this.state.name,
-                mail:this.state.mail,
+                department:this.state.department,
                 rating:this.state.rating
             }
 
@@ -65,8 +72,8 @@ class FormCompo extends  React.Component{
                 <label >Name:
                     <input type="text"  id="name" name="name" onChange={this.handleChange}></input>
                 </label><br/>
-                <label >Email:
-                    <input type="email"  id="email" name="mail" onChange={this.handleChange}></input>
+                <label >Department:
+                    <input type="text"  id="department" name="department" onChange={this.handleChange}></input>
                 </label>
                 <br></br>
                 <label >Rating:
@@ -77,17 +84,39 @@ class FormCompo extends  React.Component{
             </form>
             </div>
 
-            <div>
+            {/* <div>
                 <h2>Results:</h2>
                 {this.state.StuData.map((element,index)=>{
                     // console.log("map",index,element.name)
-                   return( <>
+                    return( <>
                    <div key={index}>
                     <h3>Name:{element.name}</h3>
                     </div>  </>
                     )
                 })}
-            </div>
+                </div> */}
+
+<table border="4">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Department</td>
+                <td>Rating</td>
+
+            </tr>
+        </thead>
+        <tbody>
+            {this.state.StuData.map((element,index)=>{
+                return(<>
+                <tr key={index}>
+                <td>{element.name}</td>
+                <td>{element.department}</td>
+                <td>{element.rating}</td>
+                </tr>
+                </>)
+            })}
+        </tbody>
+        </table>
             </>
         )
     }
