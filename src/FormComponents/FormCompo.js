@@ -56,9 +56,9 @@ class FormCompo extends  React.Component{
                 department:this.state.department,
                 rating:this.state.rating
             }
-
             this.state.StuData.push(tempobj)
-            console.log(this.state.StuData)
+            this.setState({StuData:this.state.StuData})
+            // console.log(this.state.StuData)
         }
 
     }
