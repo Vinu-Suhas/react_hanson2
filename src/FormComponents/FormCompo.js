@@ -95,13 +95,13 @@ class FormCompo extends  React.Component{
                     )
                 })}
                 </div> */}
-
-<table border="4">
+<div className="tableContainer">
+<table border="1">
         <thead>
             <tr>
-                <td>Name</td>
-                <td>Department</td>
-                <td>Rating</td>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Rating</th>
 
             </tr>
         </thead>
@@ -117,6 +117,7 @@ class FormCompo extends  React.Component{
             })}
         </tbody>
         </table>
+        </div>
             </>
         )
     }
