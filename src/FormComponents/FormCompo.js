@@ -9,13 +9,13 @@ class FormCompo extends  React.Component{
         this.state={
             StuData:[],
             error:{},
-            newData:[
-                {name:'Ramesh',batch :'EA23'},
-                {name:'Ramte',batch :'EA21'},
-                {name:'Suresh',batch :'EA23'},
-                {name:'Saketh',batch :'EA13'},
-                {name:'Vishal',batch :'EA18'},
-            ]
+            // newData:[
+            //     {name:'Ramesh',batch :'EA23'},
+            //     {name:'Ramte',batch :'EA21'},
+            //     {name:'Suresh',batch :'EA23'},
+            //     {name:'Saketh',batch :'EA13'},
+            //     {name:'Vishal',batch :'EA18'},
+            // ]
         }
         this.nameRef=createRef()
         this.departmentRef=createRef()
