@@ -1,5 +1,6 @@
 import React from "react"
 import './styles.css'
+import { createRef } from "react"
 
 class FormCompo extends  React.Component{
 
@@ -16,6 +17,9 @@ class FormCompo extends  React.Component{
                 {name:'Vishal',batch :'EA18'},
             ]
         }
+        this.nameRef=createRef()
+        this.departmentRef=createRef()
+        this.ratingRef=createRef()
 
         // this.setState({StuData:this.StuData})
     }
@@ -57,9 +61,10 @@ class FormCompo extends  React.Component{
                 rating:this.state.rating
             }
             this.state.StuData.push(tempobj)
-            this.state.name=""
-            this.state.department=""
-            this.state.rating=0
+            console.log(this.nameRef.current)
+            this.nameRef.current.value=" "
+            this.departmentRef.current.value=""
+            this.ratingRef.current.value=""
             this.setState({StuData:this.state.StuData})
             // console.log(this.state.StuData)
         }
@@ -74,14 +79,14 @@ class FormCompo extends  React.Component{
             <div className="formContainer">
             <form>
                 <label >Name:
-                    <input type="text"  id="name" name="name" onChange={this.handleChange}></input>
+                    <input type="text"  id="name" ref={this.nameRef} name="name" onChange={this.handleChange}></input>
                 </label><br/>
                 <label >Department:
-                    <input type="text"  id="department" name="department" onChange={this.handleChange}></input>
+                    <input type="text"  id="department"  ref={this.departmentRef} name="department" onChange={this.handleChange}></input>
                 </label>
                 <br></br>
                 <label >Rating:
-                    <input type="number"  id="rating" name="rating" onChange={this.handleChange}></input>
+                    <input type="number"  id="rating"  ref={this.ratingRef}  name="rating" onChange={this.handleChange}></input>
                 </label><br></br>
                 {/* <h1>{this.state.name}</h1> */}
                 <button onClick={this.handleSubmit} type="button">Submit</button>
