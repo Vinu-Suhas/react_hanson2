@@ -6,6 +6,9 @@ input{
     border-radius: 18px;
     margin-bottom: 20px;
 }
+.center{
+    text-align: center;
+}
 form
 {
     border-radius: 20px;
@@ -29,6 +32,7 @@ form
 .formContainer{
 display: flex;
 justify-content: center;
+margin-top: 20vh;
 }
 
 .tableContainer{

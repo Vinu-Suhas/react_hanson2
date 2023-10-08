@@ -30,22 +30,22 @@ class FormCompo extends  React.Component{
 
     validate=()=>{
         let invalid=true
-    /*    if(!this.state.name) {
+        if(!this.state.name) {
             // this.setState()
             invalid=false
-            console.log("Invalid name")
+            alert("Invalid name")
         }
-        if(this.state.email==='') {
+        if(this.state.department==='') {
             invalid=false
-            console.log("Invalid email")
+            alert("Invalid email")
         }
         if((this.state.rating>5 && this.state.rating<1)|| !this.state.rating) 
         {
-            console.log("Invalid email")
+            alert("Invalid email")
 
             invalid=false
         }
-*/
+
         return invalid
     }
     handleSubmit=()=>{
@@ -57,6 +57,9 @@ class FormCompo extends  React.Component{
                 rating:this.state.rating
             }
             this.state.StuData.push(tempobj)
+            this.state.name=""
+            this.state.department=""
+            this.state.rating=0
             this.setState({StuData:this.state.StuData})
             // console.log(this.state.StuData)
         }
@@ -67,6 +70,7 @@ class FormCompo extends  React.Component{
 
         return(
             <>
+                <h1 className="center">COURSE FEEDBACK FORM</h1>
             <div className="formContainer">
             <form>
                 <label >Name:
@@ -109,9 +113,9 @@ class FormCompo extends  React.Component{
             {this.state.StuData.map((element,index)=>{
                 return(<>
                 <tr key={index}>
-                <td>{element.name}</td>
-                <td>{element.department}</td>
-                <td>{element.rating}</td>
+                    <td>{element.name}</td>
+                    <td>{element.department}</td>
+                    <td>{element.rating}</td>
                 </tr>
                 </>)
             })}
